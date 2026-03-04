@@ -2,10 +2,1006 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Elize Test</title>
+  <title>Elize Beauty & Spa | Online Randevu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Elize Beauty & Spa - Başakşehir Bahçeşehir'de profesyonel ve ulaşılabilir lüks güzellik merkezi. Cilt bakımı, bölgesel incelme, masaj, kalıcı makyaj ve daha fazlası için online randevu alın." />
+  <style>
+    :root {
+      --bg: #07070a;
+      --bg-soft: #101018;
+      --accent: #e5b97c;
+      --accent-soft: rgba(229, 185, 124, 0.12);
+      --text: #f7f3ec;
+      --muted: #a7a196;
+      --border: rgba(255, 255, 255, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Roboto", sans-serif;
+      background: radial-gradient(circle at top, #151521 0, #050507 55%, #000 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 18px;
+      border: 1px solid rgba(229, 185, 124, 0.7);
+      background: radial-gradient(circle at 30% 20%, #fff4dd 0, #e5b97c 34%, #5c3f22 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #2a1b0c;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-soft {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(229, 185, 124, 0.1);
+      border: 1px solid rgba(229, 185, 124, 0.35);
+      color: var(--accent);
+    }
+
+    .btn-outline {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 7px 13px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(9, 9, 13, 0.85);
+      backdrop-filter: blur(18px);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(229, 185, 124, 0.85);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 26px;
+      margin-top: 8px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-left {
+      background: radial-gradient(circle at top left, rgba(229, 185, 124, 0.12), transparent 55%),
+                  linear-gradient(135deg, rgba(12, 12, 20, 0.96), rgba(4, 4, 9, 0.98));
+      border-radius: var(--radius-lg);
+      padding: 22px 20px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 120% -20%, rgba(229, 185, 124, 0.16), transparent 55%);
+      pointer-events: none;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 5, 11, 0.8);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e5b97c, #f7e4be);
+      box-shadow: 0 0 0 4px rgba(229, 185, 124, 0.18);
+    }
+
+    .hero-title {
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 420px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .btn-primary {
+      border-radius: var(--radius-pill);
+      padding: 11px 20px;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      background: radial-gradient(circle at 0 0, #fff7e7 0, #e5b97c 40%, #734c21 100%);
+      color: #2a1808;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary span.icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.14);
+      font-size: 12px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      filter: brightness(1.03);
+    }
+
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 10px 14px;
+      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(8, 8, 14, 0.75);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(229, 185, 124, 0.7);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 10px;
+      color: rgba(167, 161, 150, 0.8);
+    }
+
+    .meta-value {
+      font-size: 11px;
+    }
+
+    /* HERO RIGHT (HİZMET ÖZETİ) */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, rgba(9, 9, 15, 0.98), rgba(5, 5, 11, 0.98));
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(247, 243, 236, 0.9);
+    }
+
+    .card-chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(229, 185, 124, 0.6);
+      font-size: 10px;
+      color: var(--accent);
+      background: rgba(229, 185, 124, 0.08);
+    }
+
+    .service-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 250px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .service-group {
+      border-radius: var(--radius-md);
+      background: rgba(16, 16, 25, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 8px 9px 7px;
+    }
+
+    .service-group-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: rgba(247, 243, 236, 0.92);
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .service-tag {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(4, 4, 10, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .micro-note {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* HİZMET LİSTESİ BÖLÜMÜ */
+    .section {
+      margin-top: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(247, 243, 236, 0.9);
+    }
+
+    .section-sub {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .service-card {
+      border-radius: var(--radius-md);
+      background: rgba(9, 9, 16, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 11px 11px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .service-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .service-name {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .service-pill {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(229, 185, 124, 0.6);
+      color: var(--accent);
+      background: rgba(229, 185, 124, 0.08);
+    }
+
+    .service-meta-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* INSTAGRAM ÖNE ÇIKANLAR */
+    .insta-section {
+      margin-top: 32px;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .insta-item {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .insta-item iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .insta-item iframe {
+        height: 380px;
+      }
+    }
+
+    /* KONUM & İLETİŞİM – GÜÇLENDİRİLMİŞ HAL */
+    .location-card {
+      margin-top: 40px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(229, 185, 124, 0.16), transparent 55%),
+        linear-gradient(135deg, #111119, #050509);
+      border: 1px solid rgba(229, 185, 124, 0.45);
+      padding: 20px 20px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+    }
+
+    @media (max-width: 780px) {
+      .location-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .location-title {
+      font-size: 15px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #fdf6e9;
+    }
+
+    .location-address {
+      font-size: 13px;
+      color: #e0d7c6;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .mini-chip {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(229, 185, 124, 0.55);
+      color: #f1e5d1;
+      background: rgba(229, 185, 124, 0.08);
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+      color: #ffffff;
+    }
+
+    .contact-item span {
+      color: #f9f2e4;
+      font-weight: 600;
+    }
+
+    .contact-item a[href^="tel"] {
+      color: #f9f2e4;
+      font-weight: 600;
+    }
+
+    .insta-link {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .location-right {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .location-right strong {
+      color: rgba(247, 243, 236, 0.9);
+      font-weight: 500;
+    }
+
+    .location-card .btn-outline {
+      background: rgba(0, 0, 0, 0.75);
+      border-color: rgba(229, 185, 124, 0.7);
+      color: #fdf6e9;
+    }
+    .location-card .btn-outline:hover {
+      background: rgba(229, 185, 124, 0.14);
+    }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+    }
+
+    .wa-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: 2px solid rgba(37, 211, 102, 0.95);
+      background: radial-gradient(circle at 30% 20%, #eafff1 0, #25d366 36%, #128c7e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .wa-btn span {
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    .wa-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.95);
+    }
+
+    .floating-whatsapp-label {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .floating-whatsapp-label {
+        display: block;
+        position: fixed;
+        right: 82px;
+        bottom: 26px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fefefe;
+        font-size: 11px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 14px 20px 20px;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
 </head>
-<body style="background:#111; color:#fff; font-family:sans-serif; padding:40px;">
-  <h1>Elize Beauty &amp; Spa</h1>
-  <p>Bu bir test sayfasıdır. Bunu görüyorsan Vercel düzgün çalışıyor.</p>
+<body>
+  <div class="page">
+    <div class="container">
+      <!-- HEADER -->
+      <header>
+        <div class="brand">
+          <div class="brand-mark">E</div>
+          <div class="brand-text">
+            <div class="brand-name">ELIZE BEAUTY & SPA</div>
+            <div class="brand-sub">Başakşehir · Bahçeşehir · İstanbul</div>
+          </div>
+        </div>
+        <div class="header-cta">
+          <div class="badge-soft">Profesyonel · Ulaşılabilir Lüks</div>
+          <a class="btn-outline" href="https://www.kolayrandevu.com/isletme/elize-beauty-spa-yasam?website=1" target="_blank" rel="noopener">
+            Randevu Paneli
+            <span style="font-size:13px;">↗</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-left">
+          <div class="pill-row">
+            <div class="pill">
+              <i></i> Başakşehir · Bahçeşehir 2. Kısım
+            </div>
+            <div class="pill">
+              ✨ Cilt · Vücut · Spa · Güzellik
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            Online randevunuz,<br />
+            <span>Elize Beauty & Spa</span>’da hazır.
+          </h1>
+          <p class="hero-sub">
+            Cilt bakımı, bölgesel zayıflama, masaj & spa, el–ayak bakımı, kaş–kirpik, kalıcı makyaj ve daha fazlası için profesyonel ama ulaşılabilir lüks deneyimi.
+          </p>
+
+          <div class="hero-cta-row">
+            <a
+              class="btn-primary"
+              href="https://www.kolayrandevu.com/isletme/elize-beauty-spa-yasam?website=1"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>Online Randevu Al</span>
+              <span class="icon">→</span>
+            </a>
+            <a
+              class="btn-ghost"
+              href="https://www.kolayrandevu.com/isletme/elize-beauty-spa-yasam?website=1"
+              target="_blank"
+              rel="noopener"
+            >
+              Tüm Hizmetleri Gör
+              <span style="font-size:12px;">↗</span>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              <div class="meta-label">Bölge</div>
+              <div class="meta-value">Başakşehir · Bahçeşehir · Başakkent Gölet Konutları</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Konsept</div>
+              <div class="meta-value">Profesyonel &amp; ulaşılabilir lüks güzellik merkezi</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Randevu</div>
+              <div class="meta-value">KolayRandevu ile güvenli online rezervasyon</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO RIGHT: HİZMET ÖZETİ -->
+        <div class="hero-right">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Hizmet Kategorilerimiz</div>
+              <div class="card-chip">Elize Beauty & Spa</div>
+            </div>
+            <div class="service-groups">
+              <div class="service-group">
+                <div class="service-group-title">Cilt Bakımı Uygulamaları</div>
+                <div class="service-tags">
+                  <div class="service-tag">Klasik Cilt Bakımı</div>
+                  <div class="service-tag">Hydrafacial</div>
+                  <div class="service-tag">Medikal Cilt Bakımı</div>
+                  <div class="service-tag">Anti-Aging</div>
+                  <div class="service-tag">Akne &amp; Leke</div>
+                  <div class="service-tag">Nem Bakımı</div>
+                  <div class="service-tag">Dermapen</div>
+                  <div class="service-tag">Cilt Yenileme Protokolleri</div>
+                </div>
+              </div>
+
+              <div class="service-group">
+                <div class="service-group-title">Bölgesel Zayıflama &amp; Vücut Şekillendirme</div>
+                <div class="service-tags">
+                  <div class="service-tag">Neoslim</div>
+                  <div class="service-tag">G5 Masajı</div>
+                  <div class="service-tag">Pasif Jimnastik</div>
+                  <div class="service-tag">Lenf Drenaj</div>
+                  <div class="service-tag">Selülit Bakımı</div>
+                  <div class="service-tag">Sıkılaştırma</div>
+                  <div class="service-tag">Roller Masaj</div>
+                </div>
+              </div>
+
+              <div class="service-group">
+                <div class="service-group-title">Masaj &amp; Spa</div>
+                <div class="service-tags">
+                  <div class="service-tag">Klasik Vücut Masajı</div>
+                  <div class="service-tag">Bölgesel Masaj</div>
+                  <div class="service-tag">Relax Masaj</div>
+                  <div class="service-tag">Sauna</div>
+                </div>
+              </div>
+
+              <div class="service-group">
+                <div class="service-group-title">El &amp; Ayak Bakımı</div>
+                <div class="service-tags">
+                  <div class="service-tag">Manikür</div>
+                  <div class="service-tag">Pedikür</div>
+                  <div class="service-tag">Topuk Temizliği</div>
+                  <div class="service-tag">Medikal Ayak Bakımı</div>
+                </div>
+              </div>
+
+              <div class="service-group">
+                <div class="service-group-title">Kaş &amp; Kirpik İşlemleri</div>
+                <div class="service-tags">
+                  <div class="service-tag">İpek Kirpik</div>
+                  <div class="service-tag">Kirpik Lifting</div>
+                  <div class="service-tag">Kaş Laminasyonu</div>
+                  <div class="service-tag">Kaş Tasarımı</div>
+                  <div class="service-tag">Kaş Alımı</div>
+                </div>
+              </div>
+
+              <div class="service-group">
+                <div class="service-group-title">Kalıcı Makyaj</div>
+                <div class="service-tags">
+                  <div class="service-tag">Microblading</div>
+                  <div class="service-tag">Pudralama Kaş</div>
+                  <div class="service-tag">Dipliner</div>
+                  <div class="service-tag">Eyeliner</div>
+                  <div class="service-tag">Dudak Renklendirme</div>
+                </div>
+              </div>
+
+              <div class="service-group">
+                <div class="service-group-title">Epilasyon &amp; Diğer Hizmetler</div>
+                <div class="service-tags">
+                  <div class="service-tag">Lazer Epilasyon</div>
+                  <div class="service-tag">İğneli Epilasyon</div>
+                  <div class="service-tag">Ağda</div>
+                  <div class="service-tag">Profesyonel Makyaj</div>
+                </div>
+              </div>
+            </div>
+            <div class="micro-note">
+              Tüm güncel hizmet, süre ve fiyat detayları için online randevu ekranını ziyaret edebilirsiniz.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HİZMET KARTLARI (KISA LİSTE + CTA) -->
+      <section class="section" id="services">
+        <div class="section-header">
+          <div class="section-title">HİZMETLER</div>
+          <p class="section-sub">
+            Sizin için özenle seçilen işlemlerimizi KolayRandevu üzerinden güvenle planlayabilir, size en uygun gün ve saati seçebilirsiniz.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-header">
+              <div class="service-name">Cilt Bakımı Paketleri</div>
+              <div class="service-pill">Sık randevu önerilir</div>
+            </div>
+            <div class="service-meta-line">
+              <span>Hydrafacial · Medikal · Anti-Aging</span>
+              <span>₺ · Fiyatlar KolayRandevu’da</span>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-header">
+              <div class="service-name">Bölgesel İncelme &amp; Sıkılaşma</div>
+              <div class="service-pill">Programlı seanslar</div>
+            </div>
+            <div class="service-meta-line">
+              <span>Neoslim · G5 · Lenf Drenaj</span>
+              <span>₺ · Paket avantajları</span>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-header">
+              <div class="service-name">Masaj &amp; Spa Deneyimi</div>
+              <div class="service-pill">Rahatlama odaklı</div>
+            </div>
+            <div class="service-meta-line">
+              <span>Klasik · Relax · Sauna</span>
+              <span>₺ · Seans bazlı</span>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-header">
+              <div class="service-name">Kalıcı Makyaj &amp; Kaş–Kirpik</div>
+              <div class="service-pill">Doğal görünüm</div>
+            </div>
+            <div class="service-meta-line">
+              <span>Microblading · Lifting · Laminasyon</span>
+              <span>₺ · Uzman uygulama</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <a
+            class="btn-primary"
+            href="https://www.kolayrandevu.com/isletme/elize-beauty-spa-yasam?website=1"
+            target="_blank"
+            rel="noopener"
+          >
+            Tüm Hizmetleri KolayRandevu’da Gör
+            <span class="icon">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM'DAN ÖNE ÇIKANLAR -->
+      <section class="section insta-section">
+        <div class="section-header">
+          <div class="section-title">INSTAGRAM</div>
+          <p class="section-sub">
+            Elize Beauty &amp; Spa atmosferini, dönüşümleri ve işlemlerimizi Instagram’dan da takip edebilirsiniz.
+          </p>
+        </div>
+        <div class="insta-grid">
+          <div class="insta-item">
+            <iframe
+              src="https://www.instagram.com/p/DUk4XfHDPi_/embed"
+              allowtransparency="true"
+              allow="encrypted-media"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="insta-item">
+            <iframe
+              src="https://www.instagram.com/p/DTu1KRkDJcW/embed"
+              allowtransparency="true"
+              allow="encrypted-media"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="insta-item">
+            <iframe
+              src="https://www.instagram.com/p/DVYpIkyDDxQ/embed"
+              allowtransparency="true"
+              allow="encrypted-media"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONUM & İLETİŞİM -->
+      <section class="location-card">
+        <div>
+          <div class="location-title">Konum &amp; İletişim</div>
+          <p class="location-address">
+            Başakkent Gölet Konutları, Bahçeşehir 2. Kısım,<br />
+            Vatan Cd. No: 3D, Başakşehir / İstanbul
+          </p>
+          <div class="location-actions">
+            <a
+              class="btn-outline"
+              href="https://www.google.com/maps/search/?api=1&query=Başakkent+Gölet+Konutları+Bahçeşehir+2.+Kısım+Vatan+Cd.+No:+3D+Başakşehir+İstanbul"
+              target="_blank"
+              rel="noopener"
+            >
+              🔎 Yol Tarifi Al
+            </a>
+            <span class="mini-chip">Otopark · Ulaşım kolaylığı</span>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>Telefon:</span>
+              <a href="tel:+905541502234">
+                ☎️ 0 554 150 22 34
+              </a>
+            </div>
+            <div class="contact-item">
+              <span>Instagram:</span>
+              <a
+                class="insta-link"
+                href="https://www.instagram.com/elizespaguzellik/"
+                target="_blank"
+                rel="noopener"
+              >
+                @elizespaguzellik
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-right">
+          <p>
+            <strong>Randevu yönetimi</strong> KolayRandevu üzerinden güvenle yapılmaktadır. Uygun gün ve saatleri
+            anlık olarak görebilir, tek tıkla rezervasyon oluşturabilirsiniz.
+          </p>
+          <p>
+            <strong>Hedefimiz</strong>, Başakşehir &amp; Bahçeşehir bölgesine profesyonel ama ulaşılabilir lüks bir
+            güzellik deneyimi sunmak. Cilt sağlığınızı, konforunuzu ve zamanınızı önemsiyoruz.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Elize Beauty &amp; Spa · Online Randevu sayfası · Tüm hakları saklıdır.
+    </footer>
+  </div>
+
+  <!-- WhatsApp Kısayol -->
+  <div class="floating-whatsapp">
+    <a
+      class="wa-btn"
+      href="https://wa.me/905541502234?text=Merhaba%20Elize%20Beauty%20&amp;%20Spa,%20randevu%20ve%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum."
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp ile yazın"
+    >
+      <span>💬</span>
+    </a>
+    <div class="floating-whatsapp-label">
+      WhatsApp ile yazın
+    </div>
+  </div>
 </body>
 </html>
